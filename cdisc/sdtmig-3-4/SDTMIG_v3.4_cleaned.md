@@ -504,7 +504,7 @@ representing additional non-standard qualifier variables not described in the ge
 
 Figure. Creating a New Domain
 
-![Image: page15_img0.png](images/page15_img0.png)
+![Image: page15_img0.jpeg](images/page15_img0.jpeg)
 
 ### 2.7 SDTM Variables Not Allowed in the SDTMIG
 
@@ -1563,7 +1563,7 @@ Example when "Active" is checked:
 
 Figure. Example of --ENRTPT and --ENTPT for Medical History
 
-![Image: page44_img0.jpx](images/page44_img0.jpx)
+![Image: page44_img0.jpeg](images/page44_img0.jpeg)
 
 Example 2: Prior and Concomitant Medications
 
@@ -2378,21 +2378,21 @@ This example shows multiple race categories and subcategories. Only a subset of 
 
 Demographics Sample aCRF for Race with Additional Granularity
 
-If the study participant answered: AMERICAN INDIAN OR ALASKA NATIVE
-
-If the study participant answered: ASIAN
-
 ![Image: page70_img0.jpeg](images/page70_img0.jpeg)
 
+If the study participant answered: AMERICAN INDIAN OR ALASKA NATIVE
+
 ![Image: page70_img1.jpeg](images/page70_img1.jpeg)
+
+If the study participant answered: ASIAN
 
 ![Image: page70_img2.jpeg](images/page70_img2.jpeg)
 
 If the study participant answered: BLACK OR AFRICAN AMERICAN
 
-If the study participant answered: WHITE
-
 ![Image: page71_img0.jpeg](images/page71_img0.jpeg)
+
+If the study participant answered: WHITE
 
 ![Image: page71_img1.jpeg](images/page71_img1.jpeg)
 
@@ -2456,6 +2456,8 @@ This example shows different Chinese regional ethnicity subcategorizations (majo
 
 CRF Mock Example
 
+![Image: page74_img0.jpeg](images/page74_img0.jpeg)
+
 In this CRF example, subcategorizations of ethnicity are made available.
 
 RACE is identified as "ASIAN" and ETHNIC as "NOT HISPANIC OR LATINO".
@@ -2485,21 +2487,19 @@ The CRF in this example is annotated to show the CDASH variable name and the tar
 
 See the CDASH Model and Implementation Guide for additional information: https://www.cdisc.org/standards/foundational/cdash.
 
-![Image: page74_img0.jpx](images/page74_img0.jpx)
-
 This example shows race categories and subcategories. Only a subset of options are shown for this instrument due to space constraints. For a complete aCRF example see the CDASHIG v2.1, Section 7.3.
 
 Demographics Sample aCRF for Race with Additional Granularity
 
+![Image: page75_img0.jpeg](images/page75_img0.jpeg)
+
 If the study participant answered: ASIAN
+
+![Image: page75_img1.jpeg](images/page75_img1.jpeg)
 
 If the study participant answered: BLACK OR AFRICAN AMERICAN
 
-![Image: page75_img0.jpx](images/page75_img0.jpx)
-
-![Image: page75_img1.jpx](images/page75_img1.jpx)
-
-![Image: page75_img2.jpx](images/page75_img2.jpx)
+![Image: page75_img2.jpeg](images/page75_img2.jpeg)
 
 CRF Metadata
 
@@ -2556,6 +2556,8 @@ Example 7
 
 CRF Mock Example
 
+![Image: page78_img0.jpeg](images/page78_img0.jpeg)
+
 Rows 1-2: Subjects self-identify to 1 of the first 5 race options on the CRF form.
 
 Row 3: Subject did not self-identify to 1 of the existing race options and selected "Other". RACE was populated with "OTHER" in this case.
@@ -2572,8 +2574,6 @@ dm.xpt
 | 2   | ABC789  | DM     | ABC789-010-046 | 010-046 | 21  | YEARS | F   | ASIAN   | NOT HISPANIC OR LATINO |
 | 3   | ABC789  | DM     | ABC789-010-047 | 010-047 | 24  | YEARS | F   | OTHER   | HISPANIC OR LATINO     |
 | 3   | ABC789  | DM     | ABC789-010-048 | 010-048 | 33  | YEARS | M   | UNKNOWN | HISPANIC OR LATINO     |
-
-![Image: page78_img0.jpx](images/page78_img0.jpx)
 
 Row 1: Sponsor allowed for an "Other" option to be collected, where its specify details are in SUPPDM.
 
@@ -12760,25 +12760,25 @@ As illustrated in the study schema diagram for Example Trial 1, this simple para
 
 Example Trial 1, Parallel Design Study Schema
 
+![Image: page387_img0.jpeg](images/page387_img0.jpeg)
+
 The next diagram for this trial shows the 3 epochs of the trial, indicates the 3 arms, and shows the sequence of elements for each group of subjects in each epoch. The arrows are at the right side of the diagram because it is at the end of the trial that all the separate paths through the trial can be seen. Note that, in this diagram, randomization— which was shown using 3 red arrows connecting the Run-in block with the 3 treatment blocks in the first diagram— is indicated by a note with an arrow pointing to the line between 2 epochs.
 
-![Image: page387_img0.png](images/page387_img0.png)
-
 Example Trial 1, Parallel Design Prospective View
+
+![Image: page388_img0.jpeg](images/page388_img0.jpeg)
 
 The next diagram can be thought of as the retrospective view of a trial, the view back from a point in time when a subject’s assignment to an arm is known. In this view, the trial appears as a grid, with an arm represented by a series of study cells, one for each epoch, and a sequence of elements within each study cell. In this example (as in many trials), there is exactly 1 element in each study cell. Later examples will illustrate that this is not always the case.
 
 Example Trial 1, Parallel Design Retrospective View
 
+![Image: page388_img1.jpeg](images/page388_img1.jpeg)
+
 The next diagram shows the trial from the viewpoint of blinded participants. To blinded participants in this trial, all arms look alike. They know when a subject is in the screen element or the run-in element, but when a subject is in the treatment epoch, participants know only that the subject is receiving a study drug, not which study drug, and therefore not which element.
 
 Example Trial 1, Parallel Design Blinded View
 
-![Image: page388_img0.jpx](images/page388_img0.jpx)
-
-![Image: page388_img1.jpx](images/page388_img1.jpx)
-
-![Image: page388_img2.png](images/page388_img2.png)
+![Image: page388_img2.jpeg](images/page388_img2.jpeg)
 
 A trial design matrix is a table with a row for each arm in the trial and a column for each epoch in the trial. It is closely related to the retrospective view of the trial, and many users may find it easier to construct a table than to draw a diagram. The cells in the matrix represent the study cells, which are populated with trial elements. In this trial, each study cell contains exactly 1 element.
 
@@ -12814,23 +12814,25 @@ The following diagram for a crossover trial does not use the crossing slanted li
 
 Example Trial 2, Crossover Trial Study Schema
 
-![Image: page389_img0.png](images/page389_img0.png)
+![Image: page389_img0.jpeg](images/page389_img0.jpeg)
 
 The next diagram for this crossover trial shows the prospective view of the trial; it identifies the epoch and arms of the trial, and gives each a name. As for most crossover studies, the objectives of the trial will be addressed by comparisons between the arms and by within-subject comparisons between treatments. Because the design depends on differentiating the periods during which the subject receives the 3 different treatments, there are 3 different treatment epochs. The fact that the rest periods are identified as separate epochs suggests that these also play an important part in the design of the trial; they are probably designed to allow subjects to return to “baseline,” with data collected to show that this occurred. Note that epochs are not considered reusable; each epoch has a different name, even though all the treatment epochs are similar and both the rest epochs are similar. As with the first example trial, there is a one-to-one relationship between the epochs of the trial and the elements in each arm.
 
 Example Trial 2, Crossover Trial Prospective View
 
+![Image: page390_img0.jpeg](images/page390_img0.jpeg)
+
 The next diagram shows the retrospective view of the trial.
 
 Example Trial 2, Crossover Trial Retrospective View
 
+![Image: page390_img1.jpeg](images/page390_img1.jpeg)
+
 The last diagram for this trial shows the trial from the viewpoint of blinded participants. As in the simple parallel trial in Example Trial 1, blinded participants see only 1 sequence of elements; during the treatment epochs they do not know which of the treatment elements a subject is in.
 
-![Image: page390_img0.png](images/page390_img0.png)
-
-![Image: page390_img1.png](images/page390_img1.png)
-
 Example Trial 2, Crossover Trial Blinded View
+
+![Image: page391_img0.jpeg](images/page391_img0.jpeg)
 
 The following table illustrates the trial design matrix for this crossover example trial. It corresponds closely to the preceding retrospective diagram.
 
@@ -12862,18 +12864,13 @@ ta.xpt
 | 12  | EX2     | TA     | 5-P-10 | 5mg-Placebo- 10mg | 5       | REST | Rest      |                                       |         | WASHOUT 2   |
 | 13  | EX2     | TA     | 5-P-10 | 5mg-Placebo- 10mg | 6       | 10   | 10 mg     |                                       |         | TREATMENT 3 |
 | 14  | EX2     | TA     | 5-P-10 | 5mg-Placebo- 10mg | 7       | FU   | Follow-up |                                       |         | FOLLOW-UP   |
-| 15  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 1       | SCRN | Screen    | Randomized to 5 mg - 10 mg – Placebo |         | SCREENING   |
+| 15  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 1       | SCRN | Screen    | Randomized to 5 mg - 10 mg – Placebo  |         | SCREENING   |
 | 16  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 2       | 5    | 5 mg      |                                       |         | TREATMENT 1 |
 | 17  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 3       | REST | Rest      |                                       |         | WASHOUT 1   |
 | 18  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 4       | 10   | 10 mg     |                                       |         | TREATMENT 2 |
 | 19  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 5       | REST | Rest      |                                       |         | WASHOUT 2   |
-
-![Image: page391_img0.png](images/page391_img0.png)
-
-| Row | STUDYID | DOMAIN | ARMCD  | ARM               | TAETORD | ETCD | ELEMENT   | TABRANCH | TATRANS | EPOCH       |
-| --- | ------- | ------ | ------ | ----------------- | ------- | ---- | --------- | -------- | ------- | ----------- |
-| 20  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 6       | P    | Placebo   |          |         | TREATMENT 3 |
-| 21  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 7       | FU   | Follow-up |          |         | FOLLOW-UP   |
+| 20  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 6       | P    | Placebo   |                                       |         | TREATMENT 3 |
+| 21  | EX2     | TA     | 5-10-P | 5mg-10mg- Placebo | 7       | FU   | Follow-up |                                       |         | FOLLOW-UP   |
 
 Example 3
 
@@ -12881,21 +12878,25 @@ Each of the paths for the trial illustrated in the following diagram goes throug
 
 Example Trial 3, Multiple Branches Study Schema
 
+![Image: page392_img0.jpeg](images/page392_img0.jpeg)
+
 The next diagram for this trial is the prospective view. It shows the epochs of the trial and how the initial group of subjects is split into 2 treatment groups for the double-blind treatment epoch, and how each of those initial treatment groups is split in 2 at the response evaluation, resulting in the 4 arms of this trial The names of the arms have been chosen to represent the outcomes of the successive branches that, together, assign subjects to arms. These compound names were chosen to facilitate description of subjects who may drop out of the trial after the first branch and before the second branch. Example 7 in Section 5.2, Demographics, illustrates DM and Subject Elements (SE) data for such subjects.
 
 Example Trial 3, Multiple Branches Prospective View
 
-![Image: page392_img0.png](images/page392_img0.png)
-
-![Image: page392_img1.png](images/page392_img1.png)
+![Image: page392_img1.jpeg](images/page392_img1.jpeg)
 
 The next diagram shows the retrospective view. As with the first 2 example trials, there is 1 element in each study cell.
 
 Example Trial 3, Multiple Branches Retrospective View
 
+![Image: page393_img0.jpeg](images/page393_img0.jpeg)
+
 The last diagram for this trial shows the trial from the viewpoint of blinded participants. Since the prospective view is the view most relevant to study participants, the blinded view shown here is a prospective view. Because blinded participants can tell which treatment a subject receives in the Open Label epoch, they see 2 possible element sequences.
 
 Example Trial 3, Multiple Branches Blinded View
+
+![Image: page393_img1.jpeg](images/page393_img1.jpeg)
 
 The trial design matrix for this trial can be constructed easily from the diagram showing arms and epochs.
 
@@ -12907,10 +12908,6 @@ Trial Design Matrix
 | A-Rescue | Screen | Treatment A  | Rescue      |
 | B-Open A | Screen | Treatment B  | Open Drug A |
 | B-Rescue | Screen | Treatment B  | Rescue      |
-
-![Image: page393_img0.png](images/page393_img0.png)
-
-![Image: page393_img1.png](images/page393_img1.png)
 
 Creating the TA dataset for this example trial is similarly straightforward. Note that because there are 2 branch points in this trial, TABRANCH is populated for 2 records in each arm. Note also that the values of ARMCD, like the values of ARM, reflect the 2 separate processes that result in a subject's assignment to an arm.
 
@@ -12939,29 +12936,31 @@ The following diagram uses a new symbol, a large curved arrow representing the f
 
 Example Trial 4, Cyclical Chemotherapy Study Schema
 
+![Image: page394_img0.jpeg](images/page394_img0.jpeg)
+
 The next diagram shows the prospective view of this trial. Note that, in spite of the repeating element structure, this is, at its core, a 2-arm parallel study, and thus has 2 arms. In SDTMIG 3.1.1, there was an implicit assumption that each element must be in a separate epoch, and trials with cyclical chemotherapy were difficult to handle. The introduction of the concept of study cells and the dropping of the assumption that elements and epochs have a one- to-one relationship resolved these difficulties. This trial is best treated as having just 3 epochs, since the main objectives of the trial involve comparisons between the 2 treatments and do not require data to be considered cycle by cycle.
 
-![Image: page394_img0.png](images/page394_img0.png)
-
 Example Trial 4, Cyclical Chemotherapy Prospective View
+
+![Image: page395_img0.jpeg](images/page395_img0.jpeg)
 
 The next diagram shows the retrospective view of this trial.
 
 Example Trial 4, Cyclical Chemotherapy Retrospective View
 
+![Image: page395_img1.jpeg](images/page395_img1.jpeg)
+
 For the purpose of developing a TA dataset for this oncology trial, the diagram must be redrawn to explicitly represent multiple treatment and rest elements. If a maximum number of cycles is not given by the protocol, then— for the purposes of constructing an SDTM TA dataset for submission, which can only take place after the trial is complete—the number of repeats included in the TA dataset should be the maximum number of repeats that occurred in the trial. The next diagram assumes that the maximum number of cycles that occurred in this trial was 4. Some subjects will not have received all 4 cycles, because their disease progressed. The rule that directed that they receive no further cycles of chemotherapy is represented by a set of green arrows, 1 at the end of each rest epoch, that shows that a subject “skips forward” if their disease progresses. In the TA dataset, each skip-forward instruction is a transition rule, recorded in the TATRANS variable; when TATRANS is not populated, the rule is to transition to the next element in sequence.
 
 Example Trial 4, Cyclical Chemotherapy Retrospective View with Explicit Repeats
 
-![Image: page395_img0.png](images/page395_img0.png)
-
-![Image: page395_img1.png](images/page395_img1.png)
-
-![Image: page395_img2.png](images/page395_img2.png)
+![Image: page395_img2.jpeg](images/page395_img2.jpeg)
 
 The logistics of dosing mean that few oncology trials are blinded; the next diagram, however, shows the trial from the viewpoint of blinded participants if this trial is blinded.
 
 Example Trial 4, Cyclical Chemotherapy Blinded View
+
+![Image: page396_img0.jpeg](images/page396_img0.jpeg)
 
 The trial design matrix for this example trial corresponds to the diagram showing the retrospective view, with explicit repeats of the treatment and rest elements. As previously noted, the trial design matrix does not include information regarding when randomization occurs; similarly, information corresponding to the skip-forward rules is not represented in the trial design matrix.
 
@@ -12999,17 +12998,19 @@ ta.xpt
 | 19  | EX4     | TA     | B     | B   | 9       | REST | Rest      |                 |                                               | TREATMENT |
 | 20  | EX4     | TA     | B     | B   | 10      | FU   | Follow-up |                 |                                               | FOLLOW-UP |
 
-![Image: page396_img0.png](images/page396_img0.png)
-
 Example 5
 
 Example Trial 5 is much like Example Trial 4, in that the 2 treatments being compared are given in cycles, and the total length of the cycle is the same for both treatments. In this trial, however, treatment A is given over longer duration than treatment B. Because of this difference in treatment patterns, this trial cannot be blinded.
 
 Example Trial 5, Different Chemo Durations Study Schema
 
+![Image: page397_img0.jpeg](images/page397_img0.jpeg)
+
 The assumption of a one-to-one relationship between elements and epochs makes such situations difficult to handle. However, without that assumption, this trial is essentially the same as Trial 4. The next diagram shows the retrospective view of this trial.
 
 Example Trial 5, Cyclical Chemotherapy Retrospective View
+
+![Image: page397_img1.jpeg](images/page397_img1.jpeg)
 
 The trial design matrix for this trial is almost the same as for Example Trial 4; the only difference is that the maximum number of cycles for this trial was assumed to be 3.
 
@@ -13035,20 +13036,13 @@ ta.xpt
 | 7   | EX5     | TA     | A     | A   | 7       | RESTA | Rest A    |                 |                                               | TREATMENT |
 | 8   | EX5     | TA     | A     | A   | 8       | FU    | Follow-up |                 |                                               | FOLLOW-UP |
 | 9   | EX5     | TA     | B     | B   | 1       | SCRN  | Screen    | Randomized to B |                                               | SCREENING |
-
-![Image: page397_img0.jpx](images/page397_img0.jpx)
-
-![Image: page397_img1.png](images/page397_img1.png)
-
-| Row | STUDYID | DOMAIN | ARMCD | ARM | TAETORD | ETCD  | ELEMENT   | TABRANCH | TATRANS                                       | EPOCH     |
-| --- | ------- | ------ | ----- | --- | ------- | ----- | --------- | -------- | --------------------------------------------- | --------- |
-| 10  | EX5     | TA     | B     | B   | 2       | B     | Trt B     |          |                                               | TREATMENT |
-| 11  | EX5     | TA     | B     | B   | 3       | RESTB | Rest B    |          | If disease progression, go to Follow-up Epoch | TREATMENT |
-| 12  | EX5     | TA     | B     | B   | 4       | B     | Trt B     |          |                                               | TREATMENT |
-| 13  | EX5     | TA     | B     | B   | 5       | RESTB | Rest B    |          | If disease progression, go to Follow-up Epoch | TREATMENT |
-| 14  | EX5     | TA     | B     | B   | 6       | B     | Trt B     |          |                                               | TREATMENT |
-| 15  | EX5     | TA     | B     | B   | 7       | RESTB | Rest B    |          |                                               | TREATMENT |
-| 16  | EX5     | TA     | B     | B   | 8       | FU    | Follow-up |          |                                               | FOLLOW-UP |
+| 10  | EX5     | TA     | B     | B   | 2       | B     | Trt B     |                 |                                               | TREATMENT |
+| 11  | EX5     | TA     | B     | B   | 3       | RESTB | Rest B    |                 | If disease progression, go to Follow-up Epoch | TREATMENT |
+| 12  | EX5     | TA     | B     | B   | 4       | B     | Trt B     |                 |                                               | TREATMENT |
+| 13  | EX5     | TA     | B     | B   | 5       | RESTB | Rest B    |                 | If disease progression, go to Follow-up Epoch | TREATMENT |
+| 14  | EX5     | TA     | B     | B   | 6       | B     | Trt B     |                 |                                               | TREATMENT |
+| 15  | EX5     | TA     | B     | B   | 7       | RESTB | Rest B    |                 |                                               | TREATMENT |
+| 16  | EX5     | TA     | B     | B   | 8       | FU    | Follow-up |                 |                                               | FOLLOW-UP |
 
 Example 6
 
@@ -13056,9 +13050,13 @@ Example Trial 6 is an oncology trial comparing 2 types of chemotherapy that are 
 
 Example Trial 6, Different Cycle Durations Study Schema
 
+![Image: page398_img0.jpeg](images/page398_img0.jpeg)
+
 The design of this trial is very similar to that for Example Trials 4 and 5. The main difference is that there are 2 different rest elements: the short one used with drug A and the long one used with drug B. The next diagram shows the retrospective view of this trial.
 
 Example Trial 6, Cyclical Chemotherapy Retrospective View
+
+![Image: page398_img1.jpeg](images/page398_img1.jpeg)
 
 The trial design matrix for this trial assumes that there was a maximum of 4 cycles of drug A and a maximum of three cycles of drug B.
 
@@ -13070,10 +13068,6 @@ Trial Design Matrix
 | B | Screen | Trt B     | Rest B |       | Trt B |        | Rest B |       | Trt B  | Rest B |        | Follow-up |
 
 In the following TA dataset, because the treatment epoch for arm A has more elements than the treatment epoch for arm B, TAETORD is 10 for the follow-up element in arm A, but 8 for the follow-up element in arm B. (It would also be possible to assign a TAETORD value of 10 to the follow-up element in arm B.) The primary purpose of TAETORD is to order elements within an arm; leaving gaps in the series of TAETORD values does not interfere with this purpose.
-
-![Image: page398_img0.jpx](images/page398_img0.jpx)
-
-![Image: page398_img1.jpx](images/page398_img1.jpx)
 
 ta.xpt
 
@@ -13106,6 +13100,8 @@ Example Trial 7, RTOG 93-09, involves treatment of lung cancer with chemotherapy
 
 Example Trial 7, RTOG 93-09 Study Schema with 5 "options"
 
+![Image: page400_img0.jpeg](images/page400_img0.jpeg)
+
 *Disease evaluation earlier **Disease evaluation later
 
 However, the objectives of the trial make it clear that this trial is designed to compare 2 treatment strategies, chemotherapy and radiation with and without surgery, so this study is better modeled as a 2-arm trial, but with major "skip forward" arrows for some subjects, as illustrated in the following diagram. This diagram also shows more detail within the Induction Chemo + RT and Additional Chemo blocks than the preceding diagram. Both the induction and additional chemotherapy are given in 2 cycles. The second induction cycle is different for the 2 arms, since radiation therapy for those assigned to the non-surgery arm includes a “boost” which those assigned to the surgery arm do not receive.
@@ -13114,17 +13110,17 @@ The next diagram shows the prospective view of this trial. The protocol conceive
 
 Example Trial 7, RTOG-93-09 Prospective View
 
+![Image: page400_img1.jpeg](images/page400_img1.jpeg)
+
 *Disease evaluation earlier **Disease evaluation later
 
 The next diagram shows the retrospective view of this trial. The fact that the elements in the study cell for the CR arm in the continuation treatment epoch do not fill the space in the diagram is an artifact of the diagram conventions. Those subjects who do receive surgery will in fact spend a longer time completing treatment and moving into follow-up. Although it is tempting to think of the horizontal axis of these diagrams as a timeline, this can sometimes
 
-![Image: page400_img0.png](images/page400_img0.png)
-
-![Image: page400_img1.png](images/page400_img1.png)
-
 be misleading. The diagrams are not necessarily to scale in the sense that the length of the block representing an element represents its duration, and elements that line up on the same vertical line in the diagram may not occur at the same relative time within the study.
 
 Example Trial 7, RTOG 93-09 Retrospective View
+
+![Image: page401_img0.jpeg](images/page401_img0.jpeg)
 
 *Disease evaluation earlier **Disease evaluation later
 
@@ -13154,15 +13150,10 @@ ta.xpt
 | 9   | EX7     | TA     | 2     | CRS | 3       | CRS  | Chemo+RT (Surgery)      |                   | If progression, skip to Follow-up. If no progression, but subject is ineligible for or does not consent to surgery, skip to Chemo. | INDUCTION TREATMENT    |
 | 10  | EX7     | TA     | 2     | CRS | 4       | R3   | 3-5 week rest           |                   |                                                                                                                                    | CONTINUATION TREATMENT |
 | 11  | EX7     | TA     | 2     | CRS | 5       | SURG | Surgery                 |                   |                                                                                                                                    | CONTINUATION TREATMENT |
-
-![Image: page401_img0.png](images/page401_img0.png)
-
-| Row | STUDYID | DOMAIN | ARMCD | ARM | TAETORD | ETCD | ELEMENT                 | TABRANCH | TATRANS | EPOCH                  |
-| --- | ------- | ------ | ----- | --- | ------- | ---- | ----------------------- | -------- | ------- | ---------------------- |
-| 12  | EX7     | TA     | 2     | CRS | 6       | R4   | 4-6 week rest           |          |         | CONTINUATION TREATMENT |
-| 13  | EX7     | TA     | 2     | CRS | 7       | C    | Chemo                   |          |         | CONTINUATION TREATMENT |
-| 14  | EX7     | TA     | 2     | CRS | 8       | C    | Chemo                   |          |         | CONTINUATION TREATMENT |
-| 15  | EX7     | TA     | 2     | CRS | 9       | FU   | Off Treatment Follow-up |          |         | FOLLOW-UP              |
+| 12  | EX7     | TA     | 2     | CRS | 6       | R4   | 4-6 week rest           |                   |                                                                                                                                    | CONTINUATION TREATMENT |
+| 13  | EX7     | TA     | 2     | CRS | 7       | C    | Chemo                   |                   |                                                                                                                                    | CONTINUATION TREATMENT |
+| 14  | EX7     | TA     | 2     | CRS | 8       | C    | Chemo                   |                   |                                                                                                                                    | CONTINUATION TREATMENT |
+| 15  | EX7     | TA     | 2     | CRS | 9       | FU   | Off Treatment Follow-up |                   |                                                                                                                                    | FOLLOW-UP              |
 
 ##### 7.2.1.1 Trial Arms Issues
 
@@ -13412,6 +13403,8 @@ The following diagram represents visits as numbered "flags" with visit numbers. 
 
 Example Trial 1, Parallel Design Planned Visits
 
+![Image: page409_img0.jpeg](images/page409_img0.jpeg)
+
 Two TV datasets are shown for this trial. The first shows a somewhat idealized situation, where the protocol has provided specific timings for the visits. The second shows a more common situation, where the timings have been described only loosely.
 
 tv.xpt
@@ -13423,6 +13416,11 @@ tv.xpt
 | 3   | EX1     | TV     | 3        | 30 minutes before end of Run-in Epoch                       | 1 hour after start of Treatment Epoch                           |
 | 4   | EX1     | TV     | 4        | 1 week after start of Treatment Epoch                       | 1 hour after start of Visit                                     |
 | 5   | EX1     | TV     | 5        | 2 weeks after start of Treatment Epoch                      | 1 hour after start of Visit                                     |
+
+tv.xpt
+
+| Row | STUDYID | DOMAIN | VISITNUM | TVSTRL                                                      | TVENRL                                                          |
+| --- | ------- | ------ | -------- | ----------------------------------------------------------- | --------------------------------------------------------------- |
 | 1   | EX1     | TV     | 1        | Start of Screen Epoch                                       |                                                                 |
 | 2   | EX1     | TV     | 2        | On the same day as, but before, the end of the Screen Epoch | On the same day as, but after, the start of the Run-in Epoch    |
 | 3   | EX1     | TV     | 3        | On the same day as, but before, the end of the Run-in Epoch | On the same day as, but after, the start of the Treatment Epoch |
@@ -13435,11 +13433,7 @@ Although the start and end rules in this example reference the starts and ends o
 
 Identifying Trial Visits
 
-In general, a trial's visits are defined in its protocol. The term “visit” reflects the fact that data in outpatient studies is usually collected during a physical visit by the subject to a clinic. Sometimes a trial visit defined by the protocol may not correspond to a physical visit. It may span multiple physical visits, as when screening data is collected over several clinic visits but recorded under one TV name (VISIT) and number (VISITNUM). A trial visit also
-
-![Image: page409_img0.png](images/page409_img0.png)
-
-may represent only a portion of an extended physical visit, as when a trial of in-patients collects data under multiple trial visits for a single hospital admission.
+In general, a trial's visits are defined in its protocol. The term “visit” reflects the fact that data in outpatient studies is usually collected during a physical visit by the subject to a clinic. Sometimes a trial visit defined by the protocol may not correspond to a physical visit. It may span multiple physical visits, as when screening data is collected over several clinic visits but recorded under one TV name (VISIT) and number (VISITNUM). A trial visit also may represent only a portion of an extended physical visit, as when a trial of in-patients collects data under multiple trial visits for a single hospital admission.
 
 Diary data and other data collected outside a clinic may not fit the usual concept of a trial visit, but the planned times of collection of such data may be described as “visits” in the TV dataset if desired.
 
@@ -13499,6 +13493,8 @@ TD – Examples
 
 Example 1
 
+![Image: page412_img0.jpeg](images/page412_img0.jpeg)
+
 This example shows a study where the disease assessment schedule changes over the course of the study. In this example, there are 3 distinct disease-assessment schedule patterns. A single anchor date variable (TDANCVAR) provides the anchor date for each pattern. The offset variable (TDSTOFF), used in conjunction with the anchor date variable, provides the start point of each pattern of assessments..
 
 - The first disease-assessment schedule pattern starts at the reference start date (identified in the ADSL ANCH1DT variable) and repeats every 8 weeks for a total of 6 repeated assessments (i.e., week 8, week 16, week 24, week 32, week 40, week 48). Note that there is an upper and lower limit around the planned disease assessment target where the first assessment (8 weeks) could occur as early as day 53 and as late as week 9. This upper and lower limit (-3 days, +1 week) would be applied to all assessments during that pattern.
@@ -13513,9 +13509,9 @@ td.xpt
 | 2   | ABC123  | TD     | 2       | ANCH1DT  | P48W    | P12W     | P11W     | P13W     | 4        |
 | 3   | ABC123  | TD     | 3       | ANCH1DT  | P96W    | P24W     | P23W     | P25W     | 12       |
 
-![Image: page412_img0.png](images/page412_img0.png)
-
 Example 2
+
+![Image: page413_img0.jpeg](images/page413_img0.jpeg)
 
 This example shows a crossover study, where subjects are given the period 1 treatment according to the first disease- assessment schedule until disease progression, then there is a rest period of 28 days prior to the start of period 2 treatment (i.e., re-baseline for period 2). The subjects are then given the period 2 treatment according to the second disease assessment schedule until disease progression. This example also shows how two different reference/anchor dates can be used.
 
@@ -13533,9 +13529,9 @@ td.xpt
 | 1   | ABC123  | TD     | 1       | ANCH1DT  | P0D     | P8W      | P53D     | P9W      | 6        |
 | 2   | ABC123  | TD     | 2       | ANCH2DT  | P0D     | P8W      | P53D     | P9W      | 4        |
 
-![Image: page413_img0.png](images/page413_img0.png)
-
 Example 3
+
+![Image: page414_img0.jpeg](images/page414_img0.jpeg)
 
 This example shows a study where subjects are randomized to standard treatment or an experimental treatment. The subjects who are randomized to standard treatment are given the option to receive experimental treatment after they end the standard treatment (e.g., due to disease progression on standard treatment). In the randomized treatment epoch, the disease assessment schedule changes over the course of the study. At the start of the extension treatment epoch, subjects are re-baselined, i.e., an extension baseline disease assessment is performed and the disease assessment schedule is restarted).
 
@@ -13554,8 +13550,6 @@ td.xpt
 | 1   | ABC123  | TD     | 1       | ANCH1DT  | P0D     | P8W     | P53D     | P9W      | 6        |
 | 2   | ABC123  | TD     | 2       | ANCH1DT  | P48W    | P12W    | P11W     | P13W     | 17       |
 | 3   | ABC123  | TD     | 3       | ANCH2DT  | P0D     | P12W    | P11W     | P13W     | 17       |
-
-![Image: page414_img0.png](images/page414_img0.png)
 
 #### 7.3.3 Trial Disease Milestones (TM)
 
@@ -14441,7 +14435,7 @@ This example uses the sample specimen lineage illustrated below.
 
 Figure. Sample Specimen Relationship
 
-![Image: page440_img0.jpx](images/page440_img0.jpx)
+![Image: page440_img0.jpeg](images/page440_img0.jpeg)
 
 A specimen with a LEVEL value of "1" and a blank value for PARENT indicates a collected sample. All other values represent a derived sample. SPEC reflects the specimen type for the sample regardless of whether it is collected or derived.
 
