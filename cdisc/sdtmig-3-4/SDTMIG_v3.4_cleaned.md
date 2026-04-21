@@ -486,9 +486,7 @@ e. Determine the domain code, one that is not a domain code in the CDISC Control
 
 f. Apply the 2-character domain code to the appropriate variables in the domain. Replace all variable prefixes (shown in the models as “--“) with the domain code.
 
-g. Set the order of variables consistent with the order defined in the SDTM for the general observation
-
-class.
+g. Set the order of variables consistent with the order defined in the SDTM for the general observation class.
 
 h. Adjust the labels of the variables only as appropriate to properly convey the meaning in the context of
 
@@ -498,9 +496,7 @@ i. Ensure that appropriate standard variables are being properly applied by comp
 
 j. Describe the dataset within the Define-XML document. See Section 3.2, Using the CDISC Domain Models in Regulatory Submissions — Dataset Metadata.
 
-k. Place any non-standard (SDTM) variables in a Supplemental Qualifier dataset. Mechanisms for
-
-representing additional non-standard qualifier variables not described in the general observation classes and for defining relationships between separate datasets or records are described in Section 8.4, Relating Non-standard Variable Values to a Parent Domain.
+k. Place any non-standard (SDTM) variables in a Supplemental Qualifier dataset. Mechanisms for representing additional non-standard qualifier variables not described in the general observation classes and for defining relationships between separate datasets or records are described in Section 8.4, Relating Non-standard Variable Values to a Parent Domain.
 
 Figure. Creating a New Domain
 
@@ -736,41 +732,27 @@ The following rules must be adhered to when splitting a domain into separate dat
 
 1. The value of DOMAIN must be consistent across the separate datasets as it would have been if they had not been split (e.g., QS, FA).
 2. All variables that require a domain prefix (e.g., --TESTCD, --LOC) must use the value of DOMAIN as the prefix value (e.g., QS, FA).
-3. --SEQ must be unique within USUBJID for all records across all the split datasets. If there are 1000 records
+3. --SEQ must be unique within USUBJID for all records across all the split datasets. If there are 1000 records for a USUBJID across the separate datasets, all 1000 records need unique values for --SEQ.
 
-for a USUBJID across the separate datasets, all 1000 records need unique values for --SEQ.
-
-4. When relationship datasets (e.g., SUPPxx, FAxx, CO, RELREC) relate back to split parent domains,
-
-IDVAR would generally be --SEQ. When IDVAR is a value other than --SEQ (e.g., --GRPID, --REFID, -- SPID), care should be used to ensure that the parent records across the split datasets have unique values for the variable specified in IDVAR, so that related children records do not accidentally join back to incorrect parent records.
+4. When relationship datasets (e.g., SUPPxx, FAxx, CO, RELREC) relate back to split parent domains, IDVAR would generally be --SEQ. When IDVAR is a value other than --SEQ (e.g., --GRPID, --REFID, -- SPID), care should be used to ensure that the parent records across the split datasets have unique values for the variable specified in IDVAR, so that related children records do not accidentally join back to incorrect parent records.
 
 5. Permissible variables included in one split dataset need not be included in all split datasets.
-6. For domains with 2-letter domain codes (i.e., other than SUPPxx and RELREC), split dataset names can be
+6. For domains with 2-letter domain codes (i.e., other than SUPPxx and RELREC), split dataset names can be up to 4 characters in length. For example, if splitting by --CAT, dataset names would be the domain name plus up to 2 additional characters (e.g., QS36 for SF-36). If splitting Findings About by parent domain, then the dataset name would be the domain code, "FA", plus the 2-character domain code for parent domain code (e.g., "FACM"). The 4-character dataset-name limitation allows the use of a Supplemental Qualifier dataset associated with the split dataset.
 
-up to 4 characters in length. For example, if splitting by --CAT, dataset names would be the domain name plus up to 2 additional characters (e.g., QS36 for SF-36). If splitting Findings About by parent domain, then the dataset name would be the domain code, "FA", plus the 2-character domain code for parent domain code (e.g., "FACM"). The 4-character dataset-name limitation allows the use of a Supplemental Qualifier dataset associated with the split dataset.
+7. Supplemental Qualifier datasets for split domains would also be split. The nomenclature would include the additional 1 to 2 characters used to identify the split dataset (e.g., SUPPQS36, SUPPFACM). The value of RDOMAIN in the SUPP-- datasets would be the 2-character domain code (e.g., QS, FA).
 
-7. Supplemental Qualifier datasets for split domains would also be split. The nomenclature would include the
+8. In RELREC, if a dataset-level relationship is defined for a split Findings About domain, then RDOMAIN may contain the 4-character dataset name, rather than the domain name "FA", as shown in the following example.
 
-additional 1 to 2 characters used to identify the split dataset (e.g., SUPPQS36, SUPPFACM). The value of RDOMAIN in the SUPP-- datasets would be the 2-character domain code (e.g., QS, FA).
+      relrec.xpt
 
-8. In RELREC, if a dataset-level relationship is defined for a split Findings About domain, then RDOMAIN
+      | Row | STUDYID | RDOMAIN | USUBJID | IDVAR  | IDVARVAL | RELTYPE | RELID |
+      | --- | ------- | ------- | ------- | ------ | -------- | ------- | ----- |
+      | 1   | ABC     | CM      |         | CMSPID |          | ONE     | 1     |
+      | 2   | ABC     | FACM    |         | FASPID |          | MANY    | 1     |
 
-may contain the 4-character dataset name, rather than the domain name "FA", as shown in the following example.
+9. See the SDTM Implementation Guide: Associated Persons (https://www.cdisc.org/standards/foundational/sdtmig/) for the naming of split AP datasets.
 
-relrec.xpt
-
-| Row | STUDYID | RDOMAIN | USUBJID | IDVAR  | IDVARVAL | RELTYPE | RELID |
-| --- | ------- | ------- | ------- | ------ | -------- | ------- | ----- |
-| 1   | ABC     | CM      |         | CMSPID |          | ONE     | 1     |
-| 2   | ABC     | FACM    |         | FASPID |          | MANY    | 1     |
-
-9. See the SDTM Implementation Guide: Associated Persons
-
-(https://www.cdisc.org/standards/foundational/sdtmig/) for the naming of split AP datasets.
-
-10. See the SDTM Define-XML specification (https://www.cdisc.org/standards/data-exchange/define-xml) for
-
-details regarding metadata representation when a domain is split into different datasets. For additional examples, see the Metadata Submission Guideline (MSG) for SDTMIG (https://www.cdisc.org/standards/foundational/sdtmig/).
+10. See the SDTM Define-XML specification (https://www.cdisc.org/standards/data-exchange/define-xml) for details regarding metadata representation when a domain is split into different datasets. For additional examples, see the Metadata Submission Guideline (MSG) for SDTMIG (https://www.cdisc.org/standards/foundational/sdtmig/).
 
 Note that submission of split SDTM domains may be subject to additional dataset-splitting conventions as defined by regulators via technical specifications and/or as negotiated with regulatory reviewers.
 
@@ -1002,9 +984,7 @@ For the subject
 
 a. Cases where different domains in the same general observation class contain similar conceptual information. Adverse Events (AE), Medical History (MH), and Clinical Events (CE), for example, are conceptually the same data, the only differences being when the event started relative to the study start and whether the event is considered a regulatory-reportable adverse event in the study. Neurotoxicities collected in oncology trials both as separate Medical History CRFs (MH domain) and Adverse Event CRFs (AE domain) could both identify/collect "Paresthesia of the left arm". In both domains, the -- CAT variable could have the value of "NEUROTOXICITY".
 
-b. Cases where multiple datasets are necessary to capture data about the same topic. Following the
-
-oncology example, the existence and start and stop date of paresthesia of the left arm may be reported as an adverse event (AE domain), whereas the severity of the event is captured at multiple visits and recorded as Findings About (FA dataset). In both cases the --CAT variable could have a value of "NEUROTOXICITY".
+b. Cases where multiple datasets are necessary to capture data about the same topic. Following the oncology example, the existence and start and stop date of paresthesia of the left arm may be reported as an adverse event (AE domain), whereas the severity of the event is captured at multiple visits and recorded as Findings About (FA dataset). In both cases the --CAT variable could have a value of "NEUROTOXICITY".
 
 c. Cases where multiple domains are necessary to capture data that were collected together and have an implicit relationship, perhaps identified in the Related Records (RELREC) special-purpose dataset.
 
