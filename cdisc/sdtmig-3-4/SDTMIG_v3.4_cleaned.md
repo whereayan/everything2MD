@@ -448,13 +448,9 @@ These general rules apply when determining which variables to include in a domai
 
 This section describes the overall process for creating a custom domain, which must be based on 1 of the 3 SDTM general observation classes. The number of domains submitted should be based on the specific requirements of the study. To create a custom domain,
 
-1. Confirm that none of the existing published domains will fit the need. A custom domain may only be
+1. Confirm that none of the existing published domains will fit the need. A custom domain may only be created if the data are different in nature and do not fit into an existing published domain.
 
-created if the data are different in nature and do not fit into an existing published domain.
-
-    - Establish a domain of a common topic; that is, where the nature of the data is the same rather than by a specific method of collection (e.g., electrocardiogram). Group and separate data within the domain using --CAT, --SCAT, --METHOD, --SPEC, --LOC, and so on, as appropriate. Examples of different
-
-topics are: microbiology, tumor measurements, pathology/histology, vital signs, and physical exam results.
+    - Establish a domain of a common topic; that is, where the nature of the data is the same rather than by a specific method of collection (e.g., electrocardiogram). Group and separate data within the domain using --CAT, --SCAT, --METHOD, --SPEC, --LOC, and so on, as appropriate. Examples of different topics are: microbiology, tumor measurements, pathology/histology, vital signs, and physical exam results.
 
     - Do not create separate domains based on time; rather, represent both prior and current observations in a domain (e.g., CM for all non-study medications). Note that Adverse Events (AE) and Medical History (MH) are an exception to this best practice because of regulatory reporting needs.
 
@@ -464,19 +460,13 @@ topics are: microbiology, tumor measurements, pathology/histology, vital signs, 
 
     - If it is necessary to represent relationships between data that are hierarchical in nature (e.g., a parent record must be observed before child records), then establish a domain pair (e.g., MB/MS, PC/PP). Note: Domain pairs have been modeled for microbiology data (MB/MS domains) and pharmacokinetics (PK) data (PC/PP domains) to enable dataset-level relationships to be described using RELREC. The domain pair uses DOMAIN as an identifier to group parent records (e.g., MB) from child records (e.g., MS) and enables a dataset-level relationship to be described in RELREC. Without using DOMAIN to facilitate description of the data relationships, RELREC, as currently defined, could not be used without introducing a variable that would group data like DOMAIN.
 
-2. Check the SDTM Draft Domains area of the CDISC wiki
+2. Check the SDTM Draft Domains area of the CDISC wiki (https://wiki.cdisc.org/display/SDD/SDTM+Draft+Domains+Home) for proposed domains developed since the last published version of the SDTMIG. These proposed domains may be used as custom domains in a submission.
 
-(https://wiki.cdisc.org/display/SDD/SDTM+Draft+Domains+Home) for proposed domains developed since the last published version of the SDTMIG. These proposed domains may be used as custom domains in a submission.
-
-3. Look for an existing, relevant domain model to serve as a prototype. If no existing model seems
-
-appropriate, choose the general observation class (Interventions, Events, or Findings) that best fits the data by considering the topic of the observation. As illustrated in the following figure, the general approach for selecting variables for a custom domain is:
+3. Look for an existing, relevant domain model to serve as a prototype. If no existing model seems appropriate, choose the general observation class (Interventions, Events, or Findings) that best fits the data by considering the topic of the observation. As illustrated in the following figure, the general approach for selecting variables for a custom domain is:
 
 a. Select and include the required identifier variables (e.g., STUDYID, DOMAIN, USUBJID, --SEQ) and any permissible Identifier variables from the SDTM.
 
-b. Include the topic variable from the identified general observation class (e.g., --TESTCD for Findings)
-
-in the SDTM.
+b. Include the topic variable from the identified general observation class (e.g., --TESTCD for Findings) in the SDTM.
 
 c. Select and include the relevant qualifier variables from the identified general observation class in the SDTM. Variables belonging to other general observation classes must not be added.
 
@@ -488,15 +478,13 @@ f. Apply the 2-character domain code to the appropriate variables in the domain.
 
 g. Set the order of variables consistent with the order defined in the SDTM for the general observation class.
 
-h. Adjust the labels of the variables only as appropriate to properly convey the meaning in the context of
-
-the data being submitted in the newly created domain. Use title case for all labels (title case means to capitalize the first letter of every word except for articles, prepositions, and conjunctions).
+h. Adjust the labels of the variables only as appropriate to properly convey the meaning in the context of the data being submitted in the newly created domain. Use title case for all labels (title case means to capitalize the first letter of every word except for articles, prepositions, and conjunctions).
 
 i. Ensure that appropriate standard variables are being properly applied by comparing their use in the custom domain to their use in standard domains.
 
 j. Describe the dataset within the Define-XML document. See Section 3.2, Using the CDISC Domain Models in Regulatory Submissions — Dataset Metadata.
 
-k. Place any non-standard (SDTM) variables in a Supplemental Qualifier dataset. Mechanisms for representing additional non-standard qualifier variables not described in the general observation classes and for defining relationships between separate datasets or records are described in Section 8.4, Relating Non-standard Variable Values to a Parent Domain.
+k. Place any non-standard (SDTM) variables in a Supplemental Qualifier dataset. Mechanisms for representing additional non-standard qualifier variables not described in the general observation classes and for defining relationships between separate datasets or records are described in Section 8.4, Relating Non-standard Variable Values to a Parent Domain. 
 
 Figure. Creating a New Domain
 
@@ -960,43 +948,40 @@ Grouping variables are Identifiers and Qualifiers variables—such as the --CAT 
 
 Hierarchy of Grouping Variables
 
-STUDYID DOMAIN
-
---CAT
---SCAT
-
-USUBJID
-
---GRPID
-
---LNKID
-
---LNKGRP
+STUDYID 
+DOMAIN
+   --CAT
+   --SCAT
+      USUBJID
+         --GRPID
+         --LNKID
+         --LNKGRP
 
 How Grouping Variables Group Data
 
 For the subject
 
-1. All records with the same USUBJID value are a group of records that describe that subject. Across subjects (records with different USUBJID values)
-2. All records with the same STUDYID value are a group of records that describe that study.
-3. All records with the same DOMAIN value are a group of records that describe that domain.
-4. --CAT (Category) and --SCAT (Sub-category) values further subset groups within the domain. Generally, --CAT/--SCAT values have meaning within a particular domain. However, it is possible to use the same values for --CAT/--SCAT in related domains (e.g., MH and AE). When values are used across domains, the meanings should be the same. Examples of where --CAT/--SCAT may have meaning across domains/datasets include:
+1. All records with the same USUBJID value are a group of records that describe that subject. 
 
-a. Cases where different domains in the same general observation class contain similar conceptual information. Adverse Events (AE), Medical History (MH), and Clinical Events (CE), for example, are conceptually the same data, the only differences being when the event started relative to the study start and whether the event is considered a regulatory-reportable adverse event in the study. Neurotoxicities collected in oncology trials both as separate Medical History CRFs (MH domain) and Adverse Event CRFs (AE domain) could both identify/collect "Paresthesia of the left arm". In both domains, the -- CAT variable could have the value of "NEUROTOXICITY".
+Across subjects (records with different USUBJID values)
 
-b. Cases where multiple datasets are necessary to capture data about the same topic. Following the oncology example, the existence and start and stop date of paresthesia of the left arm may be reported as an adverse event (AE domain), whereas the severity of the event is captured at multiple visits and recorded as Findings About (FA dataset). In both cases the --CAT variable could have a value of "NEUROTOXICITY".
+1. All records with the same STUDYID value are a group of records that describe that study.
+2. All records with the same DOMAIN value are a group of records that describe that domain.
+3. --CAT (Category) and --SCAT (Sub-category) values further subset groups within the domain. Generally, --CAT/--SCAT values have meaning within a particular domain. However, it is possible to use the same values for --CAT/--SCAT in related domains (e.g., MH and AE). When values are used across domains, the meanings should be the same. Examples of where --CAT/--SCAT may have meaning across domains/datasets include:
 
-c. Cases where multiple domains are necessary to capture data that were collected together and have an implicit relationship, perhaps identified in the Related Records (RELREC) special-purpose dataset.
+   a. Cases where different domains in the same general observation class contain similar conceptual information. Adverse Events (AE), Medical History (MH), and Clinical Events (CE), for example, are conceptually the same data, the only differences being when the event started relative to the study start and whether the event is considered a regulatory-reportable adverse event in the study. Neurotoxicities collected in oncology trials both as separate Medical History CRFs (MH domain) and Adverse Event CRFs (AE domain) could both identify/collect "Paresthesia of the left arm". In both domains, the -- CAT variable could have the value of "NEUROTOXICITY".
 
-Stress-test data collection may capture the following:
+   b. Cases where multiple datasets are necessary to capture data about the same topic. Following the oncology example, the existence and start and stop date of paresthesia of the left arm may be reported as an adverse event (AE domain), whereas the severity of the event is captured at multiple visits and recorded as Findings About (FA dataset). In both cases the --CAT variable could have a value of "NEUROTOXICITY".
 
-i. Information about the occurrence, start, stop, and duration of the test (in the Procedures (PR) domain)
+   c. Cases where multiple domains are necessary to capture data that were collected together and have an implicit relationship, perhaps identified in the Related Records (RELREC) special-purpose dataset. Stress-test data collection may capture the following:
 
-ii. Vital Signs recorded during the stress test (VS domain)
+      i. Information about the occurrence, start, stop, and duration of the test (in the Procedures (PR) domain)
 
-iii. Treatments (e.g., oxygen) administered during the stress test (in an Interventions domain)
+      ii. Vital Signs recorded during the stress test (VS domain)
 
-In such cases, the data collected during the stress tests recorded in 3 separate domains may all have --CAT/--SCAT values (STRESS TEST) that identify that data were collected during the stress test.
+      iii. Treatments (e.g., oxygen) administered during the stress test (in an Interventions domain)
+
+      In such cases, the data collected during the stress tests recorded in 3 separate domains may all have --CAT/--SCAT values (STRESS TEST) that identify that data were collected during the stress test.
 
 Within subjects (records with the same USUBJID values)
 
@@ -1006,9 +991,7 @@ Although --SPID and --REFID are Identifier variables, they may sometimes be used
 
 --LNKID and --LNKGRP express values that are used to link records in separate domains. As such, these variables are often used in IDVAR in a RELREC relationship when there is a dataset-to-dataset relationship.
 
-1. --LNKID is a grouping identifier used to identify a record in one domain that is related to records in
-
-another domain, often forming a one-to-many relationship.
+1. --LNKID is a grouping identifier used to identify a record in one domain that is related to records in another domain, often forming a one-to-many relationship.
 
 2. --LNKGRP is a grouping identifier used to identify a group of records in one domain that is related to a record in another domain, often forming a many-to-one relationship.
 
@@ -2925,11 +2908,8 @@ ds.xpt
 | 2   | 123456  | DS     | 37      | 2     | SCREEN FAILURE            | SCREEN FAILURE            | DISPOSITION EVENT  | STUDY PARTICIPATION | SCREENING | 2019-09- 16 | 2019-09- 16 |        |
 | 3   | 123456  | DS     | 85      | 1     | INFORMED CONSENT OBTAINED | INFORMED CONSENT OBTAINED | PROTOCOL MILESTONE |                     | SCREENING | 2019-12- 13 | 2019-12- 13 | -6     |
 | 4   | 123456  | DS     | 85      | 2     | COMPLETED                 | COMPLETED                 | DISPOSITION EVENT  | STUDY PARTICIPATION | TREATMENT | 2020-02- 27 | 2020-02- 27 | 72     |
-
-| Row | STUDYID | DOMAIN | USUBJID | DSSEQ D | STERM                   | DSDECOD                   | DSCAT              | DSSCAT              | EPOCH     | DSDTC       | DSSTDTC     | DSSTDY |
-| --- | ------- | ------ | ------- | ------- | ----------------------- | ------------------------- | ------------------ | ------------------- | --------- | ----------- | ----------- | ------ |
-| 5   | 123456  | DS     | 101     | 1 I O   | NFORMED CONSENT BTAINED | INFORMED CONSENT OBTAINED | PROTOCOL MILESTONE |                     | SCREENING | 2020-02- 13 | 2020-02- 13 | -6     |
-| 6   | 123456  | DS     | 101     | 2       | WITHDRAWAL BY SUBJECT   | WITHDRAWAL BY SUBJECT     | DISPOSITION EVENT  | STUDY PARTICIPATION | TREATMENT | 2020-03- 16 | 2020-03- 16 | 26     |
+| 5   | 123456  | DS     | 101     | 1     | INFORMED CONSENT OBTAINED | INFORMED CONSENT OBTAINED | PROTOCOL MILESTONE |                     | SCREENING | 2020-02- 13 | 2020-02- 13 | -6     |
+| 6   | 123456  | DS     | 101     | 2     | WITHDRAWAL BY SUBJECT     | WITHDRAWAL BY SUBJECT     | DISPOSITION EVENT  | STUDY PARTICIPATION | TREATMENT | 2020-03- 16 | 2020-03- 16 | 26     |
 
 Because the study in this example was disrupted by an epidemic, the permissible variable SVEPCHGI (Epi/Pandemic Related Change Indicator) was included in the SV dataset. As originally planned, visits were to be conducted in person, but pandemic disruption included conducting some visits remotely. When the change to a remote visit was a change due to the pandemic, SVEPCHGI = "Y".
 
@@ -3026,8 +3006,7 @@ ag.xpt, Procedure Agents — Interventions. One record per recorded intervention
 | AGSTDY        | Study Day of Start of Agent            | Num  |                                       | Timing             | Study day of start of agent relative to the sponsor-defined RFSTDTC.                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Perm |
 | AGENDY        | Study Day of End of Agent              | Num  |                                       | Timing             | Study day of end of agent relative to the sponsor-defined RFSTDTC.                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Perm |
 | AGDUR         | Duration of Agent                      | Char | ISO 8601 duration                     | Timing             | Collected duration for an agent episode. Used only if collected on the CRF and not derived from start and end date/times.                                                                                                                                                                                                                                                                                                                                                                                                  | Perm |
-| AGSTRF        | Start Relative to Reference Period     | Char | (STENRF)                              | Timing             | Describes the start of the agent relative to sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point                                                                                                                                                                                                                                                                                                        | Perm |
-|               |                                        |      |                                       |                    | (represented by RFSTDTC and RFENDTC in Demographics). If information such as "PRIOR", "ONGOING", or "CONTINUING" was collected, this information may be translated into AGSTRF. Not all values of the codelist are allowable for this variable. See Section 4.4.7, Use of Relative Timing Variables.                                                                                                                                                                                                                       |      |
+| AGSTRF        | Start Relative to Reference Period     | Char | (STENRF)                              | Timing             | Describes the start of the agent relative to sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as "PRIOR", "ONGOING", or "CONTINUING" was collected, this information may be translated into AGSTRF. Not all values of the codelist are allowable for this variable. See Section 4.4.7, Use of Relative Timing Variables.   | Perm |
 | AGENRF        | End Relative to Reference Period       | Char | (STENRF)                              | Timing             | Describes the end of the agent relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as "PRIOR", "ONGOING", or "CONTINUING" was collected, this information may be translated into AGENRF. Not all values of the codelist are allowable for this variable. See Section 4.4.7, Use of Relative Timing Variables. | Perm |
 | AGSTRTPT      | Start Relative to Reference Time Point | Char | (STENRF)                              | Timing             | Identifies the start of the agent as being before or after the sponsor-defined reference time point defined by variable AGSTTPT. Not all values of the codelist are allowable for this variable. See Section 4.4.7, Use of Relative Timing Variables.                                                                                                                                                                                                                                                                      | Perm |
 | AGSTTPT       | Start Reference Time Point             | Char |                                       | Timing             | Description or date/time in ISO 8601 character format of the reference point referred to by AGSTRTPT. Examples: "2003-12-15", "VISIT 1".                                                                                                                                                                                                                                                                                                                                                                                   | Perm |
@@ -4313,8 +4292,7 @@ su.xpt, Substance Use — Interventions. One record per substance type per repor
 | SUENRF        | End Relative to Reference Period       | Char | (STENRF)                              | Timing             | Describes the end of the substance use with relative to the sponsor-defined reference period. The sponsor- defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as "PRIOR", "ONGOING", or "CONTINUING" was collected, this information may be translated into SUENRF. Not all values of the codelist are allowable for this variable. See Section 4.4.7, Use of Relative Timing Variables. | Perm |
 | SUSTRTPT      | Start Relative to Reference Time Point | Char | (STENRF)                              | Timing             | Identifies the start of the substance as being before or after the reference time point defined by variable SUSTTPT. Not all values of the codelist are allowable for this variable. See Section 4.4.7 , Use of Relative Timing Variables.                                                                                                                                                                                                                                                                                               | Perm |
 | SUSTTPT       | Start Reference Time Point             | Char |                                       | Timing             | Description or date/time in ISO 8601 character format of the reference point referred to by SUSTRTPT. Examples: "2003-12-15", "VISIT 1".                                                                                                                                                                                                                                                                                                                                                                                                 | Perm |
-| SUENRTPT      | End Relative to Reference Time Point   | Char | (STENRF)                              | Timing             | Identifies the end of the substance as being before or after the reference time point defined by variable SUENTPT.                                                                                                                                                                                                                                                                                                                                                                                                                       | Perm |
-|               |                                        |      |                                       |                    | Not all values of the codelist are allowable for this variable. See Section 4.4.7 , Use of Relative Timing Variables.                                                                                                                                                                                                                                                                                                                                                                                                                    |      |
+| SUENRTPT      | End Relative to Reference Time Point   | Char | (STENRF)                              | Timing             | Identifies the end of the substance as being before or after the reference time point defined by variable SUENTPT. Not all values of the codelist are allowable for this variable. See Section 4.4.7 , Use of Relative Timing Variables.                                                                                                                                                                                                                                                                                                 | Perm |
 | SUENTPT       | End Reference Time Point               | Char |                                       | Timing             | Description or date/time in ISO 8601 character format of the reference point referred to by SUENRTPT. Examples: "2003-12-25", "VISIT 2".                                                                                                                                                                                                                                                                                                                                                                                                 | Perm |
 
 1In this column, an asterisk (*) indicates that the variable may be subject to controlled terminology. CDISC/NCI codelist values are enclosed in parentheses.
